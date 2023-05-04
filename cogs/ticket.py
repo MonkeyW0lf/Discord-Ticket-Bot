@@ -268,6 +268,22 @@ class Ticket(commands.Cog):
                 await interaction.channel.delete()
                 await logs.send(embed=embed8)
 
+    @app_commands.command(name='claim', description='Claim le ticket')
+    @app_commands.default_permissions(administrator=True)
+    async def supprimer_command(self, interaction: discord.Interaction):
+
+        # Remplace ID_ROLE_SUPPORT par l'ID du rôle support sur ton serveur
+        support = interaction.guild.get_role(ID_ROLE_SUPPORT)
+
+        overwrite3 = interaction.channel.overwrites_for(support)
+        overwrite3.send_messages = False
+
+
+        await interaction.channel.set_permissions(support, overwrite=overwrite3)
+
+        embed10 = discord.Embed(
+            description=f"{interaction.user.mention} a claim ce ticket !", color=discord.Color.blue())
+        await interaction.response.send_message(embed=embed10)
 
 async def setup(bot):
     await bot.add_cog(Ticket(bot))                        
