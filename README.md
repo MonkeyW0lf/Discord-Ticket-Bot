@@ -24,6 +24,15 @@ Linux :
 python3 -m pip install -U discord.py
 ```
 
+## Config
+
+* Token = Le token de votre bot
+* logo = Le lien directe vers votre logo
+* funFact = Le texte qui sera écrit en dessous de chaque embed envoyé par le bot
+* status = Le texte qui sera affiché dans le staus du bot (ex: Joue à "votre texte")
+* categorie = Le nom exacte de la catégorie correspondante
+
+
 ## Démarrer
 
 Dans le terminal dans votre dossier où votre fichier est contenu :
